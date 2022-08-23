@@ -40,11 +40,8 @@ const removeFromDb = (id) => {
         if (quantity >= 1) {
             const newQuantity = quantity - 1;
             shoppingCart[id] = newQuantity;
-        } else {
-            if (quantity === 0) {
-                delete shoppingCart[id];
-            }
-            alert('This player is not in your cart');
+        } else if (quantity === 0) {
+            delete shoppingCart[id];
         }
         localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
     }

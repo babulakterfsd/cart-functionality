@@ -16,6 +16,11 @@ function Cart({ cart }) {
     }
     const total = subTotal + tax;
 
+    const handleDeleteShoppingCart = () => {
+        deleteShoppingCart();
+        window.location.reload();
+    };
+
     return (
         <div className=" bg-lightYellow mt-16 lg:mt-0 py-5 lg:py-8 lg:rounded-md px-6 lg:px-24 text-center ">
             <h3 className="text-2xl text-white underline mb-6">Order Summary</h3>
@@ -48,7 +53,7 @@ function Cart({ cart }) {
                     <button
                         type="button"
                         className="bg-green-500 px-3 py-1 text-white text-center rounded-md hover:bg-green-700"
-                        onClick={() => deleteShoppingCart()}
+                        onClick={() => handleDeleteShoppingCart()}
                     >
                         Remove All
                     </button>
