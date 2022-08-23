@@ -2,20 +2,30 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Cart from '../components/Cart';
 import PlayersCard from '../components/PlayersCard';
-import { addToDb, getStoredCart } from '../hooks/useLocalStorage';
+import useAuth from '../hooks/useAuth';
 
 function Home() {
-    const [players, setPlayers] = useState([]);
-    const [cart, setCart] = useState([]);
+    const {
+        addToDb,
+        getStoredCart,
+        removeFromDb,
+        deleteShoppingCart,
+        cart,
+        setCart,
+        players,
+        setPlayers,
+        QuantityCount,
+        setQuantityCount,
+    } = useAuth();
 
     useEffect(() => {
         fetch('products.JSON')
             .then((res) => res.json())
             .then((data) => setPlayers(data));
-    }, []);
+    }, [setPlayers]);
 
     useEffect(() => {
         const storedCart = getStoredCart();
@@ -29,23 +39,7 @@ function Home() {
             }
         }
         setCart(savedCart);
-    }, [players]);
-
-    const handleAddToCart = (selectedProduct) => {
-        let newCart = [];
-        const exists = cart.find((product) => product.id === selectedProduct.id);
-        if (!exists) {
-            selectedProduct.quantity = 1;
-            newCart = [...cart, selectedProduct];
-        } else {
-            const rest = cart.filter((product) => product.id !== selectedProduct.id);
-            exists.quantity += 1;
-            newCart = [...rest, exists];
-        }
-
-        setCart(newCart);
-        addToDb(selectedProduct.id);
-    };
+    }, [players, getStoredCart, setCart]);
 
     return (
         <div className="container">
@@ -57,7 +51,7 @@ function Home() {
                     <div className="grid grid-cols-12 lg:gap-x-3 lg:gap-y-5 px-3 lg:px-0">
                         {players.map((player) => (
                             <div key={player.id} className="col-span-12 lg:col-span-4">
-                                <PlayersCard player={player} handleAddToCart={handleAddToCart} />
+                                <PlayersCard player={player} />
                             </div>
                         ))}
                     </div>
