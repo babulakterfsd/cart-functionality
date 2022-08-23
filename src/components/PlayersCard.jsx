@@ -8,26 +8,26 @@ function PlayersCard({ player }) {
     const { id, name, price, photo, stock, quantity } = player;
     const { cart, setCart, addToDb, removeFromDb } = useAuth();
 
-    const handleAddToCart = (selectedProduct) => {
+    const handleAddToCart = (selectedPlayer) => {
         let newCart = [];
-        const exists = cart.find((product) => product.id === selectedProduct.id);
+        const exists = cart.find((product) => product.id === selectedPlayer.id);
         if (!exists) {
-            selectedProduct.quantity = 1;
-            newCart = [...cart, selectedProduct];
+            selectedPlayer.quantity = 1;
+            newCart = [...cart, selectedPlayer];
         } else {
-            const rest = cart.filter((product) => product.id !== selectedProduct.id);
+            const rest = cart.filter((product) => product.id !== selectedPlayer.id);
             exists.quantity += 1;
             newCart = [...rest, exists];
         }
         setCart(newCart);
-        addToDb(selectedProduct.id);
+        addToDb(selectedPlayer.id);
     };
 
-    const handleRemoveFromDB = (selectedProduct) => {
+    const handleRemoveFromDB = (selectedPlayer) => {
         let newCart = [];
-        const exists = cart.find((product) => product.id === selectedProduct.id);
+        const exists = cart.find((product) => product.id === selectedPlayer.id);
         if (exists) {
-            const rest = cart.filter((product) => product.id !== selectedProduct.id);
+            const rest = cart.filter((product) => product.id !== selectedPlayer.id);
             if (exists.quantity >= 1) {
                 exists.quantity -= 1;
             } else if (exists.quantity === 0) {
@@ -38,7 +38,7 @@ function PlayersCard({ player }) {
         if (!exists) {
             alert('This player is not in your cart');
         }
-        removeFromDb(selectedProduct.id);
+        removeFromDb(selectedPlayer.id);
         setCart(newCart);
     };
 
