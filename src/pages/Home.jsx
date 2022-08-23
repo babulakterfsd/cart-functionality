@@ -49,20 +49,20 @@ function Home() {
 
     return (
         <div className="container">
-            <div className="grid grid-cols-12 gap-4 my-12">
-                <div className="players col-span-9">
-                    <h1 className="text-center text-3xl text-darkChocolate mb-16">
+            <div className="grid grid-cols-12 gap-4 my-4 lg:my-12">
+                <div className="col-span-12 lg:col-span-9">
+                    <h1 className="text-center text-3xl text-darkChocolate mb-10">
                         Welcome to BPL Players Draft
                     </h1>
-                    <div className="grid grid-cols-12 gap-x-3 gap-y-5">
+                    <div className="grid grid-cols-12 lg:gap-x-3 lg:gap-y-5 px-3 lg:px-0">
                         {players.map((player) => (
-                            <div key={player.id} className="col-span-4">
+                            <div key={player.id} className="col-span-12 lg:col-span-4">
                                 <PlayersCard player={player} handleAddToCart={handleAddToCart} />
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className="cart bg-lightYellow py-8 rounded-md px-24 text-center col-span-3 fixed top-1/3 right-1 h-80">
+                <div className="col-span-12 lg:col-span-3 lg:fixed lg:top-1/3  lg:right-1 h-48 lg:80">
                     <Cart cart={cart} />
                 </div>
             </div>

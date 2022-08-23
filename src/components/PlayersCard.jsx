@@ -5,7 +5,7 @@ function PlayersCard({ player, handleAddToCart }) {
     const { id, name, price, photo, stock, quantity } = player;
 
     return (
-        <div className="w-full max-w-sm rounded-lg border border-gray-200 shadow-md bg-gray-800 text-white">
+        <div className="w-full max-w-sm rounded-lg border border-gray-200 shadow-md bg-gray-800 text-white my-1.5 lg:my-0">
             <div className="flex flex-col items-center pb-2 h-64 relative">
                 <div className="flex justify-between space-x-20">
                     <span>
