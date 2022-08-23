@@ -48,7 +48,7 @@ function PlayersCard({ player }) {
                 <h5 className="mb-1 text-xl font-medium">{name}</h5>
                 <span className="text-sm">{`$${price}`}</span>
                 <div className="flex justify-between items-center space-x-10 mt-8">
-                    {stock > quantity ? (
+                    {stock > QuantityCount ? (
                         <button
                             type="button"
                             className="bg-green-500 px-3 py-1 text-white text-center rounded-md hover:bg-green-700"
