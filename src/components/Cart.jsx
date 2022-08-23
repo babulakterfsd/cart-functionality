@@ -22,7 +22,7 @@ function Cart({ cart }) {
     };
 
     return (
-        <div className=" bg-lightYellow mt-16 lg:mt-0 py-5 lg:py-8 lg:rounded-md px-6 lg:px-24 text-center ">
+        <div className=" bg-dark mt-16 lg:mt-0 py-5 lg:py-8 px-6 lg:px-24 text-center lg:rounded-tl-[100px] lg:rounded-br-[100px]">
             <h3 className="text-2xl text-white underline mb-6">Order Summary</h3>
             <div className="flex justify-around items-center  text-white mb-3 lg:mb-4">
                 <span className="font-semibold">Selected Players: </span>
@@ -40,7 +40,7 @@ function Cart({ cart }) {
                 <span className="font-semibold">Total: </span>
                 <span className="text-slate-500 font-semibold">{`$${total}`}</span>
             </div>
-            <div className="flex justify-around lg:ml-8 items-center space-x-2">
+            <div className="flex justify-around lg:ml-8 items-center space-x-2 lg:space-x-4">
                 <div>
                     <button
                         type="button"
