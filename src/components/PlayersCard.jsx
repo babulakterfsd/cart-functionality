@@ -35,6 +35,9 @@ function PlayersCard({ player }) {
             }
             newCart = [...rest, exists];
         }
+        if (!exists) {
+            alert('This player is not in your cart');
+        }
         removeFromDb(selectedProduct.id);
         setCart(newCart);
     };
