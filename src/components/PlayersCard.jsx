@@ -7,7 +7,7 @@ function PlayersCard({ player, handleAddToCart }) {
     return (
         <div className="w-full max-w-sm rounded-lg border border-gray-200 shadow-md bg-gray-800 text-white my-1.5 lg:my-0">
             <div className="flex flex-col items-center pb-2 h-64 relative">
-                <div className="flex justify-between space-x-20">
+                <div className="flex justify-between space-x-12">
                     <span>
                         In Stock : <span className="text-green-500 font-semibold">{stock}</span>
                     </span>

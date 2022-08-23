@@ -50,7 +50,7 @@ function Home() {
     return (
         <div className="container">
             <div className="grid grid-cols-12 gap-4 my-4 lg:my-12">
-                <div className="col-span-12 lg:col-span-9">
+                <div className="col-span-12 lg:col-span-8">
                     <h1 className="text-center text-3xl text-darkChocolate mb-10">
                         Welcome to BPL Players Draft
                     </h1>
@@ -62,7 +62,7 @@ function Home() {
                         ))}
                     </div>
                 </div>
-                <div className="col-span-12 lg:col-span-3 lg:fixed lg:top-1/3  lg:right-1 h-48 lg:80">
+                <div className="col-span-12 lg:col-span-4 lg:fixed lg:top-1/3  lg:right-1 h-48 lg:80">
                     <Cart cart={cart} />
                 </div>
             </div>
