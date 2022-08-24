@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-unused-vars */
 import React from 'react';
@@ -19,6 +20,14 @@ function Cart({ cart }) {
     const handleDeleteShoppingCart = () => {
         deleteShoppingCart();
         window.location.reload();
+    };
+
+    const handleCheckOut = () => {
+        alert(
+            `Your session has been monitoring and current data is ${sessionStorage.getItem(
+                'checkingSessionStorageFeature'
+            )}`
+        );
     };
 
     return (
@@ -45,6 +54,7 @@ function Cart({ cart }) {
                     <button
                         type="button"
                         className="bg-green-500 px-3 py-1 text-white text-center rounded-md hover:bg-green-700"
+                        onClick={() => handleCheckOut()}
                     >
                         Checkout
                     </button>
