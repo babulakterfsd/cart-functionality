@@ -5,6 +5,7 @@ import React from 'react';
 import useAuth from '../hooks/useAuth';
 
 function Cart({ cart }) {
+    const { user } = useAuth();
     const { deleteShoppingCart } = useAuth();
     let subTotal = 0;
     let tax = 0;
@@ -17,14 +18,18 @@ function Cart({ cart }) {
     }
     const total = subTotal + tax;
 
-    const handleDeleteShoppingCart = () => {
-        deleteShoppingCart();
+    const handleDeleteShoppingCart = (loggedInUser) => {
+        localStorage.removeItem('shopping-cart');
+        sessionStorage.setItem(
+            'checkingSessionStorageFeature',
+            JSON.stringify(`${loggedInUser?.email}`)
+        );
         window.location.reload();
     };
 
     const handleCheckOut = () => {
         alert(
-            `Your session has been monitoring and current data is ${sessionStorage.getItem(
+            `We are observing your activities, ${sessionStorage.getItem(
                 'checkingSessionStorageFeature'
             )}`
         );
@@ -63,7 +68,7 @@ function Cart({ cart }) {
                     <button
                         type="button"
                         className="bg-green-500 px-3 py-1 text-white text-center rounded-md hover:bg-green-700"
-                        onClick={() => handleDeleteShoppingCart()}
+                        onClick={() => handleDeleteShoppingCart(user)}
                     >
                         Remove All
                     </button>

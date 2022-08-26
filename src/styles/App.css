@@ -9,17 +9,12 @@ body {
 
 /* common css */
 .primary-btn {
-  background: linear-gradient(
-      306.64deg,
-      rgba(255, 41, 105, 0.65) 27.07%,
-      rgba(247, 122, 28, 0.65) 71.29%
-    ),
-    #ff9a3d !important;
-  box-shadow: 0px 22.4066px 30.3008px rgba(27, 27, 27, 0.25),
-    inset 0px 0px 8.7406px rgba(255, 255, 255, 0.52);
-  border-radius: 50px;
+  background: #334155;
+  box-shadow: 0px 22.4066px 30.3008px  #334155,
+    inset 0px 0px 8.7406px  #334155;
+  border-radius: 5px;
   color: #fff;
-  @apply px-3 py-2 sm:px-6 sm:py-3 font-semibold text-sm sm:text-xl transition-all;
+  @apply px-5 py-2 font-semibold transition-all;
 }
 
 .primary-btn:hover {

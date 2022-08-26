@@ -47,10 +47,5 @@ const removeFromDb = (id) => {
     }
 };
 
-const deleteShoppingCart = () => {
-    localStorage.removeItem('shopping-cart');
-    sessionStorage.setItem('checkingSessionStorageFeature', JSON.stringify(`My name is Babul.`));
-};
-
-export { addToDb, getStoredCart, removeFromDb, deleteShoppingCart };
+export { addToDb, getStoredCart, removeFromDb };
 // eslint-disable-next-line prettier/prettier

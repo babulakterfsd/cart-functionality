@@ -1,10 +1,33 @@
 import { useState } from 'react';
-import { addToDb, deleteShoppingCart, getStoredCart, removeFromDb } from './useLocalStorage';
+import useFirebase from './useFirebase';
+import { addToDb, getStoredCart, removeFromDb } from './useLocalStorage';
 
 const AllStates = () => {
     // states
     const [cart, setCart] = useState([]);
     const [players, setPlayers] = useState([]);
+
+    // firebase
+    const {
+        user,
+        isLoading,
+        setIsLoading,
+        userEmail,
+        setUserEmail,
+        userPassword,
+        setUserPassword,
+        setName,
+        updateUser,
+        registerWithEmail,
+        setResponse,
+        name,
+        setUser,
+        auth,
+        signInWithEmailAndPassword,
+        response,
+        signInUsingGoogle,
+        signOut,
+    } = useFirebase();
 
     return {
         cart,
@@ -14,7 +37,24 @@ const AllStates = () => {
         addToDb,
         getStoredCart,
         removeFromDb,
-        deleteShoppingCart,
+        user,
+        setUser,
+        isLoading,
+        setIsLoading,
+        userEmail,
+        setUserEmail,
+        userPassword,
+        setUserPassword,
+        setName,
+        updateUser,
+        registerWithEmail,
+        setResponse,
+        name,
+        auth,
+        signInWithEmailAndPassword,
+        response,
+        signInUsingGoogle,
+        signOut,
     };
 };
 
