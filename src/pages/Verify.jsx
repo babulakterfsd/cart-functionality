@@ -25,7 +25,7 @@ function Verify() {
 
     return (
         <div className="flex justify-center items-center h-screen flex-col">
-            <h1 className="text-yellow-700 font-semibold">
+            <h1 className="text-yellow-700 font-semibold px-1 lg:px-0 mb-1 lg:mb-0">
                 Please verify your email to proceed next.
             </h1>
             <button
@@ -35,7 +35,7 @@ function Verify() {
             >
                 send verification email
             </button>
-            <span>
+            <span className="text-center">
                 <small>(please check your spam folder also if its not in the primary folder)</small>
             </span>
             <Link

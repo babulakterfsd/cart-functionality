@@ -70,7 +70,7 @@ function Register() {
                                     Login Here
                                 </Link>{' '}
                             </p>
-                            <div className="mt-7">
+                            <div className="my-7">
                                 <Link to="/" className="primary-btn py-4">
                                     Back to Home
                                 </Link>

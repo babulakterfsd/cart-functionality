@@ -31,8 +31,8 @@ function Login() {
 
     return (
         <section className="h-screen">
-            <div className="container px-6 py-12 h-full">
-                <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
+            <div className="container px-6 h-full">
+                <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800 py-12">
                     <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
                         <img
                             src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
@@ -89,7 +89,7 @@ function Login() {
                                     Create a new account
                                 </Link>{' '}
                             </p>
-                            <div className="mt-7">
+                            <div className="my-7">
                                 <Link to="/" className="primary-btn py-4">
                                     Back to Home
                                 </Link>

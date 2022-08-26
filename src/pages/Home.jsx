@@ -64,10 +64,10 @@ function Home() {
         <div className="container">
             <div>
                 {user && (
-                    <div className="absolute right-10 top-10">
+                    <div className="lg:absolute lg:right-10 lg:top-10 flex justify-end items-start">
                         <button
                             type="button"
-                            className="primary-btn bg-slate-600 text-white shadow-none"
+                            className="primary-btn bg-slate-600 text-white shadow-none rounded-none lg:rounded-md mb-6"
                             onClick={() => handleLogout()}
                         >
                             {' '}
@@ -80,7 +80,7 @@ function Home() {
                 user?.emailVerified ? (
                     <div className="grid grid-cols-12 gap-4 my-4 lg:my-12">
                         <div className="col-span-12 lg:col-span-8">
-                            <h1 className="text-center text-3xl text-darkChocolate mb-10">
+                            <h1 className="text-center lg:text-3xl text-darkChocolate mb-10">
                                 Welcome to BPL Players Draft,{' '}
                                 <span className="text-green-500 font-semibold text-md">
                                     {user?.email}
@@ -99,9 +99,9 @@ function Home() {
                         </div>
                     </div>
                 ) : (
-                    <div className="flex justify-center items-center h-screen flex-col">
-                        <h1 className="text-slate-600 font-semibold text-center">
-                            Please verify your email to proceed next...
+                    <div className="container flex justify-center items-center h-screen flex-col px-0.5 lg:px-0">
+                        <h1 className="text-slate-600 font-semibold text-center ">
+                            Please verify your email to proceed...
                             <p className="text-sm text-green-500">{user?.email}</p>
                         </h1>
                         <Link
@@ -113,13 +113,13 @@ function Home() {
                     </div>
                 )
             ) : (
-                <div className="flex justify-center items-center h-screen flex-col">
+                <div className="container flex justify-center items-center h-screen flex-col">
                     <img src={LoginImg} alt="login" className="h-72 w-72" />
-                    <h1 className="text-center -ml-5 text-2xl text-slate-800">
+                    <h1 className="text-center lg:-ml-5 text-lg lg:text-2xl text-slate-800">
                         Please Login to see our content
                     </h1>
-                    <div className="relative mt-12">
-                        <Link to="/login" className="primary-btn absolute right-0 top-0">
+                    <div className="relative mt-4 text-center">
+                        <Link to="/login" className="primary-btn py-2.5 px-6">
                             Login
                         </Link>
                     </div>
