@@ -113,7 +113,7 @@ function Home() {
                     </div>
                 )
             ) : (
-                <div className="flex justify-center items-center h-96 flex-col">
+                <div className="flex justify-center items-center h-screen flex-col">
                     <img src={LoginImg} alt="login" className="h-72 w-72" />
                     <h1 className="text-center -ml-5 text-2xl text-slate-800">
                         Please Login to see our content
