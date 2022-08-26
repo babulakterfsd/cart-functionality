@@ -80,7 +80,7 @@ function Home() {
                 user?.emailVerified ? (
                     <div className="grid grid-cols-12 gap-4 my-4 lg:my-12">
                         <div className="col-span-12 lg:col-span-8">
-                            <h1 className="text-center lg:text-3xl text-darkChocolate mb-10">
+                            <h1 className="text-center lg:text-3xl text-darkChocolate mb-10 px-1 lg:px-0">
                                 Welcome to BPL Players Draft,{' '}
                                 <span className="text-green-500 font-semibold text-md">
                                     {user?.email}

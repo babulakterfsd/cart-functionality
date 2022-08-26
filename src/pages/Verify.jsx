@@ -23,6 +23,10 @@ function Verify() {
         }
     }, [user?.emailVerified, navigate]);
 
+    if (user?.emailVerified) {
+        navigate('/');
+    }
+
     return (
         <div className="flex justify-center items-center h-screen flex-col">
             <h1 className="text-yellow-700 font-semibold px-1 lg:px-0 mb-1 lg:mb-0">

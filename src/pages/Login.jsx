@@ -29,6 +29,10 @@ function Login() {
         navigate('/');
     };
 
+    if (user) {
+        navigate('/');
+    }
+
     return (
         <section className="h-screen">
             <div className="container px-6 h-full">
